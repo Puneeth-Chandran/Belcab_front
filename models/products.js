@@ -30,7 +30,13 @@ const productSchema = new mongoose.Schema({
             message:'Please select correct category',
         },
     },
-},{timestamps:true}
+    user:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"User",
+        required: true,
+    },
+},
+{timestamps:true}
 );
 
 export default mongoose.model('Product',productSchema);
